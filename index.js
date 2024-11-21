@@ -39,7 +39,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-// Route to get posts from a specific category
+
+app.get('/', (req, res) => {
+    res.json({ "Message": "Server is running" });
+});
+
+
 app.get('/get_news/:category', async (req, res) => {
     const { category } = req.params;
     console.log(`Received request to fetch posts from category: ${category}`);
