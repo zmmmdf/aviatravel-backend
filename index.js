@@ -6,7 +6,20 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
-const serviceAccount = require('./serviceAccountKey.json'); // Replace with the path to your Firebase Admin SDK key file
+const serviceAccount = {
+  "type": "service_account",
+  "project_id": "aviatravel-az",
+  "private_key_id": "3683e75a9765ef0442b01e88eb757d8d8453027b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDB8yjZvpyyxcY1\nrCAPeQ7jBA+DhdkLu5JN/CwhuYdsqSscgw2Y0yrImgqZl5lzqwYkiJQqioXR5f1P\nIB8KlRKmeP0MKuluhlxIRo/rTdJobr0Cw6GJfKwo3t7dVRG1Zmeef8vdLNzh7bWH\nhadjZm57G34VxsYJexSX4+hUpXKbo6FDs53J24OpDwi0kL+t20hSBJ3IidNpmFL6\n+temv0wbIAV59RqUrSzfBrpWCIBBOjddZnCjFKskZrKgbO1cdkSkzY1T8E5dI+72\nGc/UnSo/tBwLYZYPoq0NEMoZnrNpCawy1EZf+zONTHjL5F6y7AnBVdQJgaR06MLu\nI439354zAgMBAAECggEARexP+Hy/irZB2PzWzC1FYDQJEc5SK2gy/XmiQYBdYh/1\nQoC/CK9s98iNdMVSlgB9JPO2k0XArCViN0Ip3stS34C0HkxkPywing4OefNjHbJ6\n40G7fdFcUhnTuHEggslKJzsEuRchBTUJorPdXrlBsJF/WgOBR06/5GjOzKGfWZu6\nWtyBCm+NpdiS+6um1S/UUh4bxkic8W++JK5NZzpdkNsmBP+xzjNGeJUqKTv7aJQ6\nygIhuaf9kCBcjq9nGZfZaI4/6SQ48yDd5BakmoS0YjmlvMEG3G6tO/Rpn/j+nu27\nVWsr5EXb2zVjJ5jdLnJUynw+bgXGmk/rzAQIPiaRdQKBgQDl+LuNfXQ6FACU5grQ\nRT7mvwB00To3iwolzRkVjAayNufaVWSnnNSRVjrlztG0+JyiBYQXb9ddBMCkBJ7f\njv+LTqIMKa3hjYvECUXm2Ff4LQXva5boilerGAUcLnXNdiYtiupT9X2ogslD9reC\nWpjlLwRdf0lZOyxvVowWsyzB1wKBgQDX5rijOvKRe7ji2au3Wdi97lPbV1Bw0Q2c\nB/44bQOfrigc1tleoHvnIs0RcVTgHOrMmpFo4sh4hkQkBIpM9XjQqNwTI3bvYK+F\nnlnIgDgN02eUkxtPNDMEfFgQZy3rTrRhznmXfv9+pTGAnJh1W0hVIT134Wv8SDBm\nHtKz324zBQKBgQDFe0DjkbW7Ie4V7y2eB7iqQZ7MsdcCV12RdHxz6ljdtRSIgwf6\nf0xyuc++BEpE07D92SrDTYFtGWWr82PSqmN7Zzz0oN32cKxy3VuvjlyMe207WfKv\nIg2CmQ/aUXNLyoeiWEY9bvRHPnhC6pxPTik5tZRUDbgY7h2MRo/p9lca5QKBgQCu\nveOE4aoATAXZPVn5HTQKjYG7jpDhrqH4PpPosXr0W63FobLvHq8J5SXaz0Jl3aHA\nlf3IyXx96BXwnOge37K4F2N/7f1OQ4/scryyReyYbBlyrBm3YkVEhSt1oz0MLXhb\njRTmo/hAVY2aTaQroAUMOcoZZA7VcswRazMYOGdlzQKBgH/DGYoYUb6AY7Ay0+LM\nuUsy5gMmOv9FEtVXkNJPt/fuV1F3LWHeLV41DNGg5d6cMTweoM/4LdyT0uMXC7k8\ncLqpqExMWxBByJH+61hoz/tm8M+u6op2QRFAiiXb2klk7vkhIKfhZGSKyEzQ+K96\nNALRZ79GS0oQn86RlqciMROD\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-4esmh@aviatravel-az.iam.gserviceaccount.com",
+  "client_id": "111616933634326200002",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-4esmh%40aviatravel-az.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+};
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://aviatravel-az-default-rtdb.firebaseio.com",
